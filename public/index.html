@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Dopamine Detox AI | Digital Wellness Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <!-- LOGIN PAGE (full screen, centered) -->
+  <div id="loginPage" class="login-page">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="icon-circle"><i class="fas fa-brain"></i></div>
+        <h2>WELCOME BACK!</h2>
+        <p class="login-sub">Sign in to continue your focus journey</p>
+      </div>
+      <form id="loginForm">
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="loginEmail" placeholder="Email address" value="user@example.com">
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="loginPassword" placeholder="Password" value="anything">
+        </div>
+        <button type="submit" class="btn-login">Login →</button>
+        <p class="demo-note">Demo: any email & password (auto‑registered)</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- MAIN APP (hidden until login) -->
+  <div id="app" style="display:none;">
+    <div class="app-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="app-sidebar">
+        <div class="sidebar-header">
+          <i class="fas fa-brain"></i>
+          <span>Dopamine Detox</span>
+        </div>
+        <nav class="sidebar-menu">
+          <a href="#dashboard" class="menu-item" data-page="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+          <a href="#tracking" class="menu-item" data-page="tracking"><i class="fas fa-chart-pie"></i> App Tracking</a>
+          <a href="#insights" class="menu-item" data-page="insights"><i class="fas fa-lightbulb"></i> AI Insights</a>
+          <a href="#history" class="menu-item" data-page="history"><i class="fas fa-history"></i> Distraction Log</a>
+          <a href="#about" class="menu-item" data-page="about"><i class="fas fa-info-circle"></i> About</a>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="user-info-sidebar">
+            <i class="fas fa-user-circle"></i>
+            <span id="sidebarUserName">User</span>
+          </div>
+          <button id="logoutBtnMain" class="logout-sidebar"><i class="fas fa-sign-out-alt"></i> Logout</button>
+          <button id="themeToggleMain" class="theme-sidebar"><i class="fas fa-moon"></i></button>
+        </div>
+      </aside>
+
+      <!-- Main Content Area (pages will be injected here) -->
+      <main class="app-content">
+        <div class="top-nav">
+          <div class="live-indicator"><i class="fas fa-circle"></i> Live AI Monitoring</div>
+          <div class="user-greeting">Hello, <span id="greetingName"></span></div>
+        </div>
+        <div id="pageContainer" class="page-container">
+          <!-- Dynamic pages loaded here -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="client.js"></script>
+</body>
+</html>
