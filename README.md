@@ -46,13 +46,6 @@ With increasing smartphone penetration, attention spans are shrinking. Dopamineâ
 
 ## ðŸ“¦ Installation & Running Locally
 
-### Prerequisites
 - [Node.js](https://nodejs.org/) (v18 or higher)
 - npm (comes with Node.js)
-
-### Steps
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/priyam9595/dopamine-detox-ai.git
-   cd dopamine-detox-ai
+- node server.js
